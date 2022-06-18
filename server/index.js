@@ -1,4 +1,3 @@
-const sslRedirect = require("heroku-ssl-redirect");
 const express = require("express");
 const fs = require("fs");
 const { title } = require("process");
@@ -18,7 +17,7 @@ app.use(
 );
 
 connectDB();
-app.use(sslRedirect());
+
 app.use("/api/v1/todo", todoRoutes);
 app.use("/api/v1/user", userRoutes);
 const PORT = process.env.PORT || 3001;
