@@ -1,0 +1,11 @@
+###
+POST http://localhost:3001/api/v1/user/login
+
+{
+    "username":"admin@gmail.com",
+    "password":"123456"
+}
+###
+GET http://localhost:3001/api/v1/user/
+Authorization: Bearer
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjAyOTBmMDY1YTYyM2M1YWYzYjlkZSIsImlhdCI6MTY1MTM4NzkyNiwiZXhwIjoxNjUxMzg4MjI2fQ.DJOujeQpkAXvH1Mow-NGtvi8Tsc-Lnut9qdHH17ivIg

@@ -1,0 +1,103 @@
+.container-todo {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .todo {
+        padding: 20px;
+        width: 500px;
+        box-shadow: 0px 0px 5px -2px #333;
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 10px;
+            display: flex;
+
+            input {
+                padding: 8px 12px;
+                border: 1px solid black;
+                border-radius: 3px;
+                flex: 1;
+            }
+
+            button {
+                margin-left: 10px;
+                padding: 0 30px;
+                cursor: pointer;
+                background-color: aquamarine;
+                border-radius: 3px;
+                color: white;
+            }
+        }
+
+        ul {
+            margin-top: 10px;
+
+            li {
+                display: flex;
+                margin-bottom: 5px;
+                padding: 10px 5px;
+                border-radius: 3px;
+                box-shadow: 0px 1px 5px -2px #333;
+            }
+
+            .finish {
+                text-decoration: line-through;
+
+            }
+
+            .icons {
+                margin-left: auto;
+
+                .icon {
+
+                    cursor: pointer;
+
+                    &.fa-trash {
+                        color: #e74c3c;
+                        margin-left: 10px;
+                        text-decoration: none !important;
+                    }
+
+                    &.fa-pen-to-square {
+                        color: #f1c40f;
+                        text-decoration: none;
+                    }
+
+                    &.fa-check {
+                        color: green;
+                        margin-right: 10px;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+        }
+
+        .all-button {
+            display: flex;
+            justify-content: space-evenly;
+
+            button {
+                margin-top: 10px;
+                cursor: pointer;
+                background-color: aquamarine;
+                border-radius: 3px;
+                color: white;
+                padding: 10px 20px;
+            }
+
+            // margin: 0 auto;
+            // button{
+            //     &:first-child{
+            //         margin-right: 50px;
+            //     }
+            // }
+        }
+    }
+
+}
