@@ -1,10 +1,11 @@
 import axios from "axios";
-import { LOGIN, REGISTER } from "./type";
+import { API_USER, LOGIN, REGISTER } from "./type";
 
 const login = (value, navigate) => async (dispatch) => {
   const { username, password } = value;
+  console.log(`${API_USER}/login`);
   const response = await axios
-    .post("http://localhost:3001/api/v1/user/login", value)
+    .post(`${API_USER}/user/login`, value)
     .catch((err) => {
       alert(err);
     })
@@ -32,10 +33,7 @@ const register = (user, navigate) => async (dispatch) => {
     username: email,
     password,
   };
-  const res = await axios.post(
-    "http://localhost:3001/api/v1/user/createUser",
-    data
-  );
+  const res = await axios.post(`${API_USER}/createUser`, data);
   if (res.data.success) {
     navigate("/login");
   } else {

@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import "./todo.scss";
 import axios from "axios";
 import { currentUser } from "../../reducer/userReducer";
+import { API_TODO } from "../../actions/type";
 const TodoList = () => {
   const id = currentUser.id;
-  const url = "http://localhost:3001/api/v1/todo/" + id;
+  const url = `${API_TODO}/${id}`;
   const fetchData = async () => {
     const data = await axios.get(url).then((res) => {
       const { todo } = res.data;
@@ -34,7 +35,7 @@ const TodoList = () => {
 
   const deleteTodo = async (id) => {
     const token = localStorage.getItem("token");
-    const url = "http://localhost:3001/api/v1/todo/" + id;
+    const url = `${API_TODO}/${id}`;
     await axios
       .delete(url, {
         headers: { Authorization: `Bearer ${token}` },
@@ -53,7 +54,7 @@ const TodoList = () => {
     });
     const findTodo = todo.find((val) => val._id === id);
     const token = localStorage.getItem("token");
-    const url = "http://localhost:3001/api/v1/todo/status/" + id;
+    const url = `${API_TODO}/status/${id}`;
     await axios
       .patch(url, findTodo, {
         headers: { Authorization: `Bearer ${token}` },
@@ -71,7 +72,7 @@ const TodoList = () => {
     const newValue = { ...selectedInput, content: value };
 
     const token = localStorage.getItem("token");
-    const url = "http://localhost:3001/api/v1/todo/" + selectedInput._id;
+    const url = `${API_TODO}/${selectedInput._id}`;
     const updateTodo = await axios
       .patch(url, newValue, {
         headers: { Authorization: `Bearer ${token}` },
@@ -94,7 +95,7 @@ const TodoList = () => {
       const id = currentUser.id;
       const token = localStorage.getItem("token");
 
-      const url = "http://localhost:3001/api/v1/todo";
+      const url = API_TODO;
       const createTodo = {
         owner: currentUser.username,
         ownerID: id,
