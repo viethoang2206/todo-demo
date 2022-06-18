@@ -4,12 +4,14 @@ import { API_USER, LOGIN, REGISTER } from "./type";
 const login = (value, navigate) => async (dispatch) => {
   const { username, password } = value;
   console.log(`${API_USER}/login`);
+  console.log(value);
   const response = await axios
-    .post(`${API_USER}/user/login`, value)
+    .post(`${API_USER}/login`, value)
     .catch((err) => {
       alert(err);
     })
     .then((res) => {
+      console.log(res);
       localStorage.setItem("token", res.data.token);
       return res;
     });

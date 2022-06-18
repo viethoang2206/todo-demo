@@ -31,10 +31,6 @@ exports.findUser = async (req, res) => {
         const id = user[0]._id;
 
         const token = jwt.sign({ id }, process.env.ACCESS_TOKEN_SECRET);
-        // , {
-        //   expiresIn: 300,
-        // }
-
         res.json({
           token,
           success: true,
