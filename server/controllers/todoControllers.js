@@ -11,6 +11,15 @@ exports.getTodo = async (req, res) => {
     todo: data,
   });
 };
+exports.getAllTodo = async (req, res) => {
+  const data = await Todo.find().catch((err) => {
+    res.status(500).json({ message: err.message });
+  });
+  res.json({
+    success: true,
+    todo: data,
+  });
+};
 exports.createTodo = async (req, res) => {
   const { owner, ownerID, title, content } = req.body;
 

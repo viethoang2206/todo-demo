@@ -7,6 +7,7 @@ const {
   updateTodo,
 
   updateStatus,
+  getAllTodo,
 } = require("../controllers/todoControllers");
 const {
   authenticateToken,
@@ -15,7 +16,7 @@ const {
 } = require("../helper/jwt.helper");
 
 const router = express.Router();
-
+router.get("/", getAllTodo);
 router.get("/:id", getTodo);
 router.delete("/:id", verifyTodo, deleteTodo);
 
