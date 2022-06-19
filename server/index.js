@@ -1,3 +1,5 @@
+const redirectSSL = require("redirect-ssl");
+require("dotenv").config();
 const express = require("express");
 const fs = require("fs");
 const { title } = require("process");
@@ -17,7 +19,7 @@ app.use(
 );
 
 connectDB();
-
+app.use(redirectSSL);
 app.use("/api/v1/todo", todoRoutes);
 app.use("/api/v1/user", userRoutes);
 const PORT = process.env.PORT || 3001;

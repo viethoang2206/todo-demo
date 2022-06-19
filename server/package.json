@@ -1,12 +1,12 @@
 {
  "scripts": {
-  "start": "nodemon index.js",
+  "start": "node index",
   "proxy": "http:/localhost:3000"
  },
- "engines":{
-    "node":"14.4.0",
-    "npm":"7.24.1"
-  },
+ "engines": {
+  "node": "14.4.0",
+  "npm": "7.24.1"
+ },
  "dependencies": {
   "bcrypt": "^5.0.1",
   "cors": "^2.8.5",
@@ -15,6 +15,7 @@
   "file-system": "^2.2.2",
   "jsonwebtoken": "^8.5.1",
   "mongoose": "^6.3.0",
-  "nodemon": "^2.0.15"
+  "nodemon": "^2.0.15",
+  "redirect-ssl": "^3.0.0"
  }
 }
