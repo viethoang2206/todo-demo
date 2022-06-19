@@ -5,13 +5,22 @@ const authenticateToken = (req, res, next) => {
   const authHeader = req.headers["authorization"];
 
   const token = authHeader && authHeader.split(" ")[1];
-  if (token == null) return res.status(401);
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, id) => {
-    if (err) return res.status(403);
-    req.id = id;
+  if (token == null)
+    return res.status(401).json({
+      success: false,
+      message: "Access token not found",
+    });
+  try {
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, id) => {
+      if (err) return res.status(403);
+      req.id = id;
 
-    next();
-  });
+      next();
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(403);
+  }
 };
 const verifyUser = async (req, res, next) => {
   const userID = await User.find({ _id: req.body.ownerID });
