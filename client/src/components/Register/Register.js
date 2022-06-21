@@ -54,9 +54,8 @@ const Register = () => {
             message: "Please input your password!",
           },
         ]}
-        hasFeedback
       >
-        <Input type="password" />
+        <Input.Password />
       </Form.Item>
       <Form.Item
         name="confirm"
