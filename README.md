@@ -13,3 +13,8 @@
   <li>run npm i && npm start for both client and server side to start the app</li> 
 </ul>
 
+<h2>Link to website</h2>
+<ul>
+  <li>https://app.netlify.com/sites/ornate-croquembouche-f60bff/deploys/62b13cc395f78e00080607d6</li> 
+</ul>
+
