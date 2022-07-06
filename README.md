@@ -15,6 +15,6 @@
 
 <h2>Link to website</h2>
 <ul>
-  <li>https://app.netlify.com/sites/ornate-croquembouche-f60bff/deploys/62b13cc395f78e00080607d6</li> 
+  <li>https://62b13cc395f78e00080607d6--ornate-croquembouche-f60bff.netlify.app/</li> 
 </ul>
 
