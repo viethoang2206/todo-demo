@@ -4,3 +4,5 @@
 
 
 <h2>Features</h2>
+<p> Users can register and log in to create their own todo list </p>
+<p> In their own todo list, users can create new todo, edit existing todo and delete todo</p>
