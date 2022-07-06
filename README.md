@@ -6,3 +6,10 @@
 <h2>Features</h2>
 <p> Users can register and log in to create their own todo list </p>
 <p> In their own todo list, users can create new todo, edit existing todo and delete todo</p>
+
+
+<h2>Setup</h2>
+<ul>
+  <li>run npm i && npm start for both client and server side to start the app</li> 
+</ul>
+
